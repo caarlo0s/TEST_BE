@@ -1,18 +1,44 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+# Created by https://www.toptal.com/developers/gitignore/api/dotnetcore,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=dotnetcore,visualstudiocode
 
-# Other files and folders
-.settings/
+### DotnetCore ###
+# .NET Core build folders
+bin/
+obj/
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+# Common node modules locations
+/node_modules
+/wwwroot/node_modules
+/**/bin/**/*
+/./**/bin/**/*
+./**/bin/**/*
+**/bin/**/*
+*/bin/**/*
+bin/**/*
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# Support for Project snippet scope
+.vscode/*.code-snippets
+
+# Ignore code-workspaces
+*.code-workspace
+
+# End of https://www.toptal.com/developers/gitignore/api/dotnetcore,visualstudiocode
