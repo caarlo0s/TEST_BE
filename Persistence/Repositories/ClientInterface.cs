@@ -9,5 +9,5 @@ namespace BE_TALENTO.Persistence.Repositories
         public Task<Response<IEnumerable<ClientResponse>>> AddUpdateClient(ClientRequest clientRequest);
          public Task<Response<IEnumerable<ClientResponse>>> GetClients();
          public Task<Response<IEnumerable<ClientResponse>>> DeleteClient(int id_cliente);
-    }
+    } 
 }

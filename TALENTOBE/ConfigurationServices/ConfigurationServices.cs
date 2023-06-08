@@ -18,6 +18,7 @@ namespace BE_TALENTO.ConfigurationServices
             services.AddScoped<ClientInterface, ClientRepository>();
             services.AddScoped<StoreInterface, StoreRepository>();
             services.AddScoped<ProductInterface, ProductRepository>();
+            services.AddScoped<CheckOutInterface, CheckOutRepository>();
 
             return services;
         }

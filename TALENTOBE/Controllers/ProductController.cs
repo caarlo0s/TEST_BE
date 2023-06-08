@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using BE_TALENTO.Model.Requests;
 using BE_TALENTO.Model.Responses;
@@ -31,7 +30,7 @@ namespace BE_TALENTO.Controllers
             result = await _productInterface.AddUpdateProduct(prodRequest);
             return result;
         }
-          [HttpPost("addUpdProductStock")]
+        [HttpPost("addUpdProductStock")]
         public async Task<Response<IEnumerable<StockStoreResponse>>> addUpdProductStock(StockStoreRequest stockRequest)
         {
             Response<IEnumerable<StockStoreResponse>> result;
@@ -46,18 +45,25 @@ namespace BE_TALENTO.Controllers
             return result;
         }
 
-         [HttpGet("GetStockXStore")]
+        [HttpGet("GetStockXStore")]
         public async Task<Response<IEnumerable<GetStockResponse>>> getStockXStore(string codigo, int id_articulo)
         {
             Response<IEnumerable<GetStockResponse>> result;
-            result = await _productInterface.getStockXStore(codigo,id_articulo);
+            result = await _productInterface.getStockXStore(codigo, id_articulo);
             return result;
         }
-          [HttpDelete("DeleteProduct")]
+        [HttpDelete("DeleteProduct")]
         public async Task<Response<IEnumerable<ProductResponse>>> deleteProduct(int id_cliente)
         {
             Response<IEnumerable<ProductResponse>> result;
             result = await _productInterface.DeleteProduct(id_cliente);
+            return result;
+        }
+        [HttpGet("GetProductXStore")]
+        public async Task<Response<IEnumerable<ProductStoreResponse>>> getProdcutXStore(int id_tienda)
+        {
+            Response<IEnumerable<ProductStoreResponse>> result;
+            result = await _productInterface.getProdcutXStore(id_tienda);
             return result;
         }
 

@@ -1,0 +1,34 @@
+using Microsoft.AspNetCore.Mvc;
+using BE_TALENTO.Model.Requests;
+using BE_TALENTO.Model.Responses;
+using BE_TALENTO.Persistence.DapperConnection;
+using BE_TALENTO.Persistence.Repositories;
+using BE_TALENTO.Security.token;
+
+namespace BE_TALENTO.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CheckOutController : ControllerBase
+    { 
+         private readonly CheckOutInterface _checkOutInterface;
+        private readonly JwtGenerateInterface _jwtGenerator;
+
+        public CheckOutController(CheckOutInterface checkoutInterface,
+                              JwtGenerateInterface jwtGenerator
+                            )
+        {
+            _checkOutInterface = checkoutInterface;
+            _jwtGenerator = jwtGenerator;
+        }
+
+        [HttpPost("AddCheckOut")]
+        public async Task<Response<IEnumerable<CheckOutResponse>>> addCheckOut(CheckOutRequest CheckOutRequest)
+        {
+            Response<IEnumerable<CheckOutResponse>> result;
+            result = await _checkOutInterface.AddCheckOut(CheckOutRequest);
+            return result;
+        }
+    }
+
+}

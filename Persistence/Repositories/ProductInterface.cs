@@ -11,7 +11,7 @@ namespace BE_TALENTO.Persistence.Repositories
          public Task<Response<IEnumerable<ProductResponse>>> DeleteProduct(int id_articulo);
          public Task<Response<IEnumerable<StockStoreResponse>>> AddUpdProductStock(StockStoreRequest stockRequest);
          public Task<Response<IEnumerable<GetStockResponse>>> getStockXStore(string codigo, int id_articulo);
-
+ public Task<Response<IEnumerable<ProductStoreResponse>>> getProdcutXStore(int id_tienda);
          
     }
 }
